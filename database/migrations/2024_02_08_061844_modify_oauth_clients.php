@@ -11,7 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::dropColumns('oauth_clients', 'application_id');
+        if (Schema::hasColumn('oauth_clients', 'application_id')) {
+            Schema::dropColumns('oauth_clients', 'application_id');
+        }
 
         Schema::table('oauth_clients', function (Blueprint $table) {
             $table->foreignId('application_id')->nullable()->constrained();

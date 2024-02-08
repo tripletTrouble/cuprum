@@ -20,6 +20,7 @@ if (isset($argv[1])) {
             echo "Installing laravel passport";
             echo `php artisan passport:install`;
             echo "Installation complete, you can run \033[42;97mphp artisan serve\033[0m to start using the application!";
+	    break;
         default:
             echo "Sorry, Sir! We do not provide that command!";
     }

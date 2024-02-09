@@ -10,7 +10,7 @@ if (isset($argv[1])) {
             echo `cp .env.example .env`;
             echo "Generating app key...";
             echo `php artisan key:generate`;
-            echo "Installation complete, now edit your .env database section file then run \n \033[0mphp capybara launch:db\033[0m \n";
+            echo "Installation complete, now edit your .env database section file then run \n \033[42;97mphp capybara launch:db\033[0m \n";
             break;
         case 'launch:db':
             echo "Migrating database ...";
@@ -20,7 +20,7 @@ if (isset($argv[1])) {
             echo "Installing laravel passport";
             echo `php artisan passport:install`;
             echo "Installation complete, you can run \033[42;97mphp artisan serve\033[0m to start using the application!";
-	    break;
+	        break;
         default:
             echo "Sorry, Sir! We do not provide that command!";
     }

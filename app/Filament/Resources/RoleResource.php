@@ -29,13 +29,14 @@ class RoleResource extends Resource
         return $form
             ->schema([
                 Select::make('application_id')
+                    ->label("Application")
                     ->options(Application::all()->pluck('name', 'id'))
                     ->searchable()
                     ->disablePlaceholderSelection()
                     ->default(1),
                 TextInput::make('name')
                     ->required()
-                    ->placeholder('Application Name')
+                    ->placeholder('Role Name')
             ]);
     }
 
